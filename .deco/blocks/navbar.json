@@ -1,0 +1,309 @@
+{
+  "items": [
+    {
+      "@type": "SiteNavigationElement",
+      "url": "#kitchen",
+      "name": "Kitchen",
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/french-door",
+              "name": "French Door",
+              "identifier": "French Door"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/single-door-refrigerator-freezer",
+              "name": "Single Door",
+              "identifier": "Single Door"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/side-by-side",
+              "name": "Side-By-Side",
+              "identifier": "Side-By-Side"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Top Freezer",
+              "url": "/kitchen-appliances/refrigerators/top-freezer",
+              "identifier": "Top Freezer"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/compact-refrigerator",
+              "name": "Compact",
+              "identifier": "Compact"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/wine-beverage-refrigerators",
+              "name": "Wine & Beverage",
+              "identifier": "Wine & Beverage"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/refrigerators/bottom-freezer-refrigerator",
+              "identifier": "Bottom Freezer",
+              "name": "Bottom Freezer"
+            }
+          ],
+          "name": "Refrigerators",
+          "identifier": "Refrigerators",
+          "url": "/kitchen-appliances/refrigerators"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/single-door-refrigerator-freezer",
+              "name": "Single Door",
+              "identifier": "Single Door"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/freezers/upright-freezer",
+              "name": "Upright",
+              "identifier": "Upright"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/freezers/chest-freezer",
+              "name": "Chest",
+              "identifier": "Chest"
+            }
+          ],
+          "name": "Freezers",
+          "url": "/kitchen-appliances/freezers",
+          "identifier": "Freezers"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/ranges/induction-range",
+              "name": "Induction",
+              "identifier": "Induction"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/ranges/gas-range",
+              "name": "Gas",
+              "identifier": "Gas"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/ranges/electric-range",
+              "name": "Electric",
+              "identifier": "Electric"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/ranges/dual-fuel-range",
+              "name": "Dual Fuel",
+              "identifier": "Dual Fuel"
+            }
+          ],
+          "name": "Ranges & Stoves",
+          "identifier": "Ranges & Stoves",
+          "url": "/kitchen-appliances/ranges"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/cooktops/induction-cooktops",
+              "name": "Induction",
+              "identifier": "Induction"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/cooktops/gas-cooktops",
+              "name": "Gas",
+              "identifier": "Gas"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/cooktops/electric-cooktops",
+              "name": "Electric",
+              "identifier": "Electric"
+            }
+          ],
+          "url": "/kitchen-appliances/cooktops",
+          "name": "Cooktops",
+          "identifier": "Cooktops"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/wall-ovens/single",
+              "name": "Single",
+              "identifier": "Single"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/wall-ovens/double",
+              "name": "Double",
+              "identifier": "Double"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/wall-ovens/micro",
+              "name": "Microwave Combination",
+              "identifier": "Microwave Combination"
+            }
+          ],
+          "url": "/kitchen-appliances/wall-ovens",
+          "identifier": "Wall Ovens",
+          "name": "Wall Ovens"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/dishwashers/view-all",
+              "name": "Dishwashers",
+              "identifier": "Dishwashers"
+            }
+          ],
+          "url": "/kitchen-appliances/dishwashers",
+          "identifier": "Dishwashers",
+          "name": "Built-In Dishwashers"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/microwaves/built-in-microwave",
+              "name": "Built-In",
+              "identifier": "Built-In"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/kitchen-appliances/microwaves/over-the-range-microwave",
+              "name": "Over-The-Range",
+              "identifier": "Over-The-Range"
+            }
+          ],
+          "url": "/kitchen-appliances/microwaves",
+          "name": "Microwaves",
+          "identifier": "Microwaves"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/kitchen-appliances/ventilation-hood",
+          "name": "Ventilation",
+          "identifier": "Ventilation"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/garbage-disposals",
+          "name": "Garbage Disposals",
+          "identifier": "Garbage Disposals"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "url": "/small-kitchen-appliances/retro-mini-fridges",
+              "identifier": "Retro Mini Fridges",
+              "name": "Retro Mini Fridges"
+            }
+          ],
+          "url": "/small-appliances",
+          "name": "Small Appliances",
+          "identifier": "Small Appliances"
+        },
+        {
+          "image": [],
+          "children": [],
+          "url": "/kitchen-package",
+          "name": "Kitchen Packages",
+          "identifier": "Kitchen Packages"
+        }
+      ],
+      "image": [],
+      "identifier": "Kitchen"
+    },
+    {
+      "url": "#air-conditioners",
+      "name": "Air Conditioners",
+      "children": [],
+      "image": [],
+      "identifier": "Air Conditioners"
+    },
+    {
+      "url": "#laundry",
+      "name": "Laundry",
+      "children": [],
+      "image": [],
+      "identifier": "Laundry"
+    },
+    {
+      "url": "#filters",
+      "name": "Filters",
+      "children": [],
+      "image": [],
+      "identifier": "Filters"
+    },
+    {
+      "url": "#acessories",
+      "name": "Acessories",
+      "children": [],
+      "image": [],
+      "identifier": "Acessories"
+    },
+    {
+      "url": "#owner-support",
+      "name": "Owner Support",
+      "children": [],
+      "image": [],
+      "identifier": "Owner Support"
+    },
+    {
+      "children": [],
+      "image": [],
+      "identifier": "Promotions",
+      "name": "Promotions",
+      "url": "#promotions"
+    }
+  ],
+  "__resolveType": "commerce/loaders/navbar.ts"
+}
