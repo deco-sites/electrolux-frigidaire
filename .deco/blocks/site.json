@@ -10,7 +10,7 @@
     "descriptionTemplate": "%s | Deco.cx"
   },
   "theme": {
-    "__resolveType": "Deco"
+    "__resolveType": "Frigidaire Theme"
   },
   "global": [
     {
