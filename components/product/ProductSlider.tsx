@@ -37,7 +37,7 @@ function ProductSlider({ products, itemListName }: Props) {
                   index={index}
                   product={product}
                   itemListName={itemListName}
-                  class="w-[287px] sm:w-[300px]"
+                  class="w-[287px] sm:w-[400px]"
                 />
               </Slider.Item>
             ))}

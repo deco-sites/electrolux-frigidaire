@@ -13,6 +13,10 @@ const colors: Record<string, string | undefined> = {
   "White": "white",
   "Black": "black",
   "Gray": "gray",
+  "LightBlue": "lightblue",
+  "DarkBlue": "darkblue",
+  "DarkGreen": "darkgreen",
+  "DarkYellow": "darkyellow"
 };
 
 const useStyles = (value: string, checked: boolean) => {

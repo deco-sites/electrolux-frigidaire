@@ -32,13 +32,8 @@ function Bag() {
         for={MINICART_DRAWER_ID}
         aria-label="open cart"
       >
-        <span
-          id={id}
-          class="hidden indicator-item badge badge-primary badge-sm font-thin"
-        />
-
-        <span class="btn btn-square btn-sm btn-ghost no-animation">
-          <Icon id="shopping_bag" />
+        <span class="cursor-pointer no-animation">
+          <Icon class="text-primary" id="shopping_bag" />
         </span>
       </label>
       <script

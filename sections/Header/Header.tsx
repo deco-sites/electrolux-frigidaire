@@ -68,9 +68,34 @@ const Desktop = (
       </div>
     </Modal>
 
-    <div class="flex flex-col gap-4 pt-5 container border-b border-gray-300">
-      <div class="grid grid-cols-3 place-items-center">
-        <div class="place-self-start">
+    <div class="flex flex-col gap-4 w-full bg-neutral-100">
+      <div class="flex justify-between py-3 container">
+        <div class="flex">
+          <a href="#" aria-label="" class="flex items-center">
+            <Icon class="text-primary mr-2" id="home_pin" />Deliver to:
+          </a>
+        </div>
+
+        <div class="flex gap-4 place-self-end">
+          <SignIn />
+          <a href="#" aria-label="" class="flex items-center mr-2">
+            <Icon class="text-primary mr-2" id="call" />Contact us
+          </a>
+          <label
+            for={SEARCHBAR_POPUP_ID}
+            class="cursor-pointer flex items-center mr-2"
+            aria-label="search icon button"
+          >
+            <Icon class="text-primary" id="search" />
+          </label>
+          <Bag />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 container relative">
+      <div class="flex justify-between items-center text-base-300">
+        <div class="flex flex-1">
           <a href="/" aria-label="Store logo">
             <Image
               src={logo.src}
@@ -81,30 +106,9 @@ const Desktop = (
           </a>
         </div>
 
-        <label
-          for={SEARCHBAR_POPUP_ID}
-          class="input input-bordered flex items-center gap-2 w-full"
-          aria-label="search icon button"
-        >
-          <Icon id="search" />
-          <span class="text-base-300 truncate">
-            Search products, brands...
-          </span>
-        </label>
-
-        <div class="flex gap-4 place-self-end">
-          <SignIn variant="desktop" />
-          <Bag />
-        </div>
-      </div>
-
-      <div class="flex justify-between items-center text-base-300">
-        <ul class="flex">
+        <ul class="flex flex-1 justify-end relative w-full">
           {navItems?.slice(0, 4).map((item) => <NavItem item={item} />)}
         </ul>
-        <div>
-          {/* ship to */}
-        </div>
       </div>
     </div>
   </>
@@ -154,7 +158,7 @@ const Mobile = ({ logo, searchbar }: Props) => (
         hx-trigger="click once"
         hx-get={useSection({ props: { variant: "menu" } })}
       >
-        <Icon id="menu" />
+        <Icon class="text-primary" id="menu" />
       </label>
 
       {logo && (
@@ -174,14 +178,12 @@ const Mobile = ({ logo, searchbar }: Props) => (
       )}
 
       <label
-        for={SEARCHBAR_DRAWER_ID}
-        class="btn btn-square btn-sm btn-ghost"
+        for={SEARCHBAR_POPUP_ID}
+        class="cursor-pointer flex items-center mr-2"
         aria-label="search icon button"
       >
-        <Icon id="search" />
+        <Icon class="text-primary" id="search" />
       </label>
-
-      <SignIn variant="mobile" />
 
       <Bag />
     </div>
@@ -216,7 +218,7 @@ function Header({
       hx-target="closest section"
       hx-swap="outerHTML"
     >
-      <div class="bg-base-100 fixed w-full z-40">
+      <div class="bg-base-100 w-full z-40 border-b border-gray-300">
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />

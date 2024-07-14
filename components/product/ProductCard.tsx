@@ -71,13 +71,12 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact group text-sm", _class)}
+      class={clx("card card-compact rounded-none group text-sm border border-neutral-300 p-5", _class)}
     >
       <figure
         class={clx(
-          "relative bg-base-200",
+          "relative",
           "rounded border border-transparent",
-          "group-hover:border-primary",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -155,20 +154,9 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="pt-5">
-        <span class="font-medium">
+        <span class="font-medium text-xl">
           {title}
         </span>
-
-        <div class="flex gap-2 pt-2">
-          {listPrice && (
-            <span class="line-through font-normal text-gray-400">
-              {formatPrice(listPrice, offers?.priceCurrency)}
-            </span>
-          )}
-          <span class="font-medium text-base-300">
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
-        </div>
       </a>
 
       {/* SKU Selector */}
@@ -193,36 +181,18 @@ function ProductCard({
 
       <div class="flex-grow" />
 
-      <div>
-        {inStock
-          ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
-              class={clx(
-                "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-50",
-                "btn-primary hover:!text-primary disabled:!text-primary",
-              )}
-            />
-          )
-          : (
-            <a
-              href={relativeUrl}
-              class={clx(
-                "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-75",
-                "btn-error hover:!text-error disabled:!text-error",
-              )}
-            >
-              Sold out
-            </a>
-          )}
+      <div class="flex gap-2 pt-2">
+        <span class="text-2xl font-medium text-secondary">
+          {formatPrice(price, offers?.priceCurrency)}
+        </span>
+        {listPrice && (
+          <span class="line-through font-normal text-xl text-gray-400">
+            {formatPrice(listPrice, offers?.priceCurrency)}
+          </span>
+        )}
+        <span class="line-through font-normal text-xl text-gray-400">
+          R$200,00
+        </span>
       </div>
     </div>
   );

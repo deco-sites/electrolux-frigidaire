@@ -269,11 +269,43 @@ function Section({
     .map(([name, value]) => ({ name, value }));
 
   return (
-    <SiteTheme
-      fonts={font ? [font] : undefined}
-      variables={variables}
-      colorScheme={colorScheme === "any" ? undefined : colorScheme}
-    />
+    <>
+      <SiteTheme
+        variables={variables}
+        colorScheme={colorScheme === "any" ? undefined : colorScheme}
+      />
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          @font-face {
+          font-family: "Gotham";
+          font-style: normal;
+          font-weight: normal;
+          font-display: swap;
+          src: url(/fonts/gotham-book.woff)
+              format("woff"),
+            url(/fonts/gotham-book.woff)
+              format("woff2");
+          }
+          @font-face {
+            font-family: "Gotham";
+            font-style: normal;
+            font-weight: bold;
+            font-display: swap;
+            src: url(/fonts/gotham-bold.woff)
+                format("woff"),
+              url(/fonts/gotham-bold.woff)
+                format("woff2");
+          }
+                
+          html, :root {
+            color: #212738;
+            font-family: "Gotham", sans-serif;
+          }`,
+        }}
+      >
+      </style>
+    </>
   );
 }
 
