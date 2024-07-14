@@ -33,7 +33,8 @@ function SignIn() {
         href="/account"
         aria-label="Account"
       >
-        <Icon class="text-primary mr-2" id="account_circle" />Log in / Order status 
+        <Icon class="text-primary mr-2" id="account_circle" />Log in / Order
+        status
       </a>
       <script
         type="module"

@@ -1,8 +1,6 @@
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import {
-  NAVBAR_HEIGHT_DESKTOP,
-} from "../../constants.ts";
+import { NAVBAR_HEIGHT_DESKTOP } from "../../constants.ts";
 
 function NavItem({ item }: { item: SiteNavigationElement }) {
   const { url, name, children } = item;
@@ -47,17 +45,18 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                     <span>{node.name}</span>
                   </a>
 
-                  {node.children && 
-                    <ul class="flex flex-col gap-1 mt-2">
-                      {node.children?.map((leaf) => (
-                        <li>
-                          <a class="hover:underline" href={leaf.url}>
-                            <span class="text-s">{leaf.name}</span>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  }
+                  {node.children &&
+                    (
+                      <ul class="flex flex-col gap-1 mt-2">
+                        {node.children?.map((leaf) => (
+                          <li>
+                            <a class="hover:underline" href={leaf.url}>
+                              <span class="text-s">{leaf.name}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                 </li>
               ))}
             </ul>

@@ -71,7 +71,10 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact rounded-none group text-sm border border-neutral-300 p-5", _class)}
+      class={clx(
+        "card card-compact rounded-none group text-sm border border-neutral-300 p-5",
+        _class,
+      )}
     >
       <figure
         class={clx(
