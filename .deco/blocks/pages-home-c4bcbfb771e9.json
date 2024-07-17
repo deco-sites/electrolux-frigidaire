@@ -9,7 +9,7 @@
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "Make Mom's day",
+      "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
       "cta": "/mono",
       "products": {
         "__resolveType": "shopify/loaders/ProductList.ts",
@@ -111,8 +111,8 @@
       "label": "Sign up",
       "placeholder": "Email address",
       "empty": {
-        "title": "Get top deals, latest trends, and more.",
-        "description": "Receive our news and promotions in advance. Enjoy and get 10% off your first purchase. For more information click here."
+        "title": "Be the first to know",
+        "description": "Get the latest deals and product updates straight to your inbox."
       },
       "success": {
         "title": "Thank you for subscribing!",
