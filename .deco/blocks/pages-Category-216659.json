@@ -1,9 +1,5 @@
 {
-  "name": "Search Page",
-  "path": "/search/:term",
-  "default": {
-    "possiblePaths": []
-  },
+  "__resolveType": "website/pages/Page.tsx",
   "sections": [
     {
       "jsonLD": {
@@ -36,5 +32,9 @@
       "__resolveType": "Footer"
     }
   ],
-  "__resolveType": "website/pages/Page.tsx"
+  "name": "Refrigerators - French Door",
+  "path": "/kitchen-appliances/refrigerators/french-door",
+  "default": {
+    "possiblePaths": []
+  }
 }

@@ -28,68 +28,52 @@
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
-      "title": "Featured departments",
-      "cta": "/all",
+      "title": "Discover Frigidaire Appliances",
       "items": [
         {
-          "label": "Grocery",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/9581289b-7ad3-462b-a680-47678f87c0fc",
-          "href": "/"
+          "label": "Refrigerators",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/9eb7fccc-b42b-4f7e-bc6e-1557422a2340/GRMS2773AF_370x400.jpg",
+          "href": "https://www.frigidaire.com/kitchen-appliances/refrigerators"
         },
         {
-          "href": "/",
-          "label": "Home",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/ec749573-4bf4-45d7-ac20-fc66e15cad6e"
+          "href": "/kitchen-appliances/ranges",
+          "label": "Ranges",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/aacf820c-7f1e-446a-8cc4-5de96b776b95/Induction-range-open.jpg"
         },
         {
-          "href": "/",
-          "label": "Furniture",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/d1731f58-3fff-46e6-9165-d4d698c4e199"
+          "href": "/kitchen-appliances/cooktops",
+          "label": "Cooktops",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/d7d7255c-7c9d-4dcf-a501-e6f3aecd987b/Frig-Pro-Cooktops.jpg"
         },
         {
-          "href": "/",
-          "label": "Toys",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/3a0e5e41-0875-43b9-aaff-27b400c5274c"
+          "href": "/kitchen-appliances/wall-ovens",
+          "label": "Wall Ovens",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/83fa0208-db11-4b70-a24a-5c2f39742ceb/Microwave-wall-oven-combo.jpg"
         },
         {
-          "href": "/",
-          "label": "Electronics",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/4e0b46e9-c5c3-4222-8c9e-4ce98f3d9ad9"
+          "href": "/kitchen-appliances/dishwashers",
+          "label": "Dishwashers",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/80f7e9cc-c658-44c6-8c3a-d56f3e10e8f2/Dishwasher-open.jpg"
         },
         {
-          "href": "/",
-          "label": "Pets",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/edd5d0e2-9e02-4730-bef7-1f1cd750d579"
+          "href": "/kitchen-appliances/microwaves",
+          "label": "Microwaves",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/c304437a-ad34-4ee8-91b7-bd3e78a47ffe/Microwave-open.jpg"
         },
         {
-          "href": "/",
-          "label": "Clothing & Shoes",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/ccb8fefc-3197-45a5-a085-3b6f493d08a0"
+          "href": "/home-comfort/air-conditioning/window-mounted-air-conditioner",
+          "label": "Window Air Conditioners",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/c3a7038a-db87-4659-b48f-db00142d1cd7/RAC_Window-Mounted.jpg"
         },
         {
-          "href": "/",
-          "label": "Baby",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/8afd4bc6-b568-4999-b80d-ef36c78f1153"
+          "href": "/home-comfort/air-conditioning/portable-air-conditioners",
+          "label": "Portable Air Conditioners",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/eda42f33-9ca2-4fc2-b757-5dff6aff950c/RAC_Portable_CLP.jpg"
         },
         {
-          "href": "/",
-          "label": "Sports & Outdoors",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/b81a2f89-0d91-44b6-ac4c-f7f092cf3c46"
-        },
-        {
-          "href": "/",
-          "label": "Beauty",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/6bc77133-8f09-4301-b54e-e4924b51a5c5"
-        },
-        {
-          "href": "/",
-          "label": "Health",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a9a21762-d617-4b44-8b4f-ec31d36d42f2"
-        },
-        {
-          "href": "/",
-          "label": "Luggage",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/253fc321-0d8c-4f33-8ae6-3ba1ff18c619"
+          "href": "/home-comfort/dehumidifiers",
+          "label": "Dehumidifiers",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/2686f983-6048-425e-ad2b-ada0f8995744/RAC_Dehumidifier_thumbnail.jpg"
         }
       ]
     },
