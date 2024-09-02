@@ -2,7 +2,6 @@ import { type AppContext } from "../../apps/site.ts";
 import { type Minicart } from "../../components/minicart/Minicart.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 
-import linx from "../../sdk/cart/linx/submit.ts";
 import vnda from "../../sdk/cart/vnda/submit.ts";
 import wake from "../../sdk/cart/wake/submit.ts";
 import vtex from "../../sdk/cart/vtex/submit.ts";
@@ -13,7 +12,6 @@ const actions: Record<string, CartSubmitActions> = {
   vtex: vtex as CartSubmitActions,
   vnda: vnda as CartSubmitActions,
   wake: wake as CartSubmitActions,
-  linx: linx as CartSubmitActions,
   shopify: shopify as CartSubmitActions,
   nuvemshop: nuvemshop as CartSubmitActions,
 };

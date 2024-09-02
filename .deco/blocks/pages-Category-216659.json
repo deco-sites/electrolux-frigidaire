@@ -2,18 +2,17 @@
   "__resolveType": "website/pages/Page.tsx",
   "sections": [
     {
-      "jsonLD": {
-        "__resolveType": "PLP Loader"
-      },
-      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx"
-    },
-    {
       "__resolveType": "Header"
     },
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "PLP Loader"
+        "__resolveType": "sap/loaders/product/productListingPage.ts",
+        "currentPage": 0,
+        "fields": "FULL",
+        "pageSize": 12,
+        "query": "tote",
+        "categoryCode": "M_FoodPreservation_Refrigerators_FrenchDoor"
       },
       "layout": {
         "columns": {

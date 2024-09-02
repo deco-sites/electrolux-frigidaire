@@ -10,7 +10,7 @@
  */
 
 import { Suggestion } from "apps/commerce/types.ts";
-import { useScript } from "apps/utils/useScript.ts";
+import { useScript } from "deco/hooks/useScript.ts";
 import { asResolved, Resolved } from "deco/mod.ts";
 import {
   SEARCHBAR_INPUT_FORM_ID,
@@ -22,7 +22,7 @@ import Icon from "../../ui/Icon.tsx";
 import { Props as SuggestionProps } from "./Suggestions.tsx";
 
 // When user clicks on the search button, navigate it to
-export const ACTION = "/s";
+export const ACTION = "/search";
 // Querystring param used when navigating the user
 export const NAME = "q";
 

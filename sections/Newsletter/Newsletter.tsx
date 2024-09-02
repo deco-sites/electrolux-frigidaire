@@ -73,7 +73,7 @@ function Notice(
 }
 
 function Links(
-  { title, links }: LinksProps
+  { title, links }: LinksProps,
 ) {
   return (
     <div class="flex flex-col justify-center items-center sm:items-start gap-6">
@@ -81,12 +81,15 @@ function Links(
         {title}
       </span>
       <div class="flex flex-wrap">
-        {links && links.map(({href, label}) => {
+        {links && links.map(({ href, label }) => {
           return (
-            <a href={href} class="w-full sm:w-1/2 text-md font-normal text-base-300 px-4 pb-6">
+            <a
+              href={href}
+              class="w-full sm:w-1/2 text-md font-normal text-base-300 px-4 pb-6"
+            >
               {label}
             </a>
-          )
+          );
         })}
       </div>
     </div>
@@ -115,8 +118,8 @@ function Newsletter({
       { href: "#", label: "Product Registration" },
       { href: "#", label: "Extended Service Warranties" },
       { href: "#", label: "Special Offers" },
-      { href: "#", label: "Inspiration" }
-    ]
+      { href: "#", label: "Inspiration" },
+    ],
   },
   label = "Sign up",
   placeholder = "Enter your email address",

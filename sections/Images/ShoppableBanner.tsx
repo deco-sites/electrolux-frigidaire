@@ -93,7 +93,7 @@ export default function ShoppableBanner(props: Props) {
               height={227}
             />
             <img
-              class="w-full h-full object-cover"
+              class="w-full h-full object-contain"
               sizes="(max-width: 640px) 100vw, 30vw"
               src={image?.mobile}
               alt={image?.altText}

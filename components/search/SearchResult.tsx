@@ -1,6 +1,6 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import { useScript } from "apps/utils/useScript.ts";
+import { useScript } from "deco/hooks/useScript.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import { SectionProps } from "deco/mod.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
@@ -43,16 +43,17 @@ function NotFound() {
   );
 }
 
-const useUrlRebased = (overrides: string | undefined, base: string) => {
+const useUrlRebased = (newPage: string | undefined, base: string) => {
   let url: string | undefined = undefined;
 
-  if (overrides) {
-    const temp = new URL(overrides, base);
+  if (newPage) {
     const final = new URL(base);
 
-    final.pathname = temp.pathname;
-    for (const [key, value] of temp.searchParams.entries()) {
+    for (const [key, value] of final.searchParams.entries()) {
       final.searchParams.set(key, value);
+      if (key === "page") {
+        final.searchParams.set(key, newPage);
+      }
     }
 
     url = final.href;
@@ -69,8 +70,12 @@ function PageResult(props: SectionProps<typeof loader>) {
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-  const nextPageUrl = useUrlRebased(pageInfo.nextPage, url);
-  const prevPageUrl = useUrlRebased(pageInfo.previousPage, url);
+  const nextPageUrl = pageInfo.nextPage
+    ? useUrlRebased(pageInfo.nextPage, url)
+    : "";
+  const prevPageUrl = pageInfo.previousPage
+    ? useUrlRebased(pageInfo.previousPage, url)
+    : "";
   const partialPrev = useSection({
     href: prevPageUrl,
     props: { partial: "hideMore" },
@@ -107,8 +112,8 @@ function PageResult(props: SectionProps<typeof loader>) {
         data-product-list
         class={clx(
           "grid items-center",
-          "grid-cols-2 gap-2",
-          "sm:grid-cols-4 sm:gap-10",
+          "grid-cols-1 gap-2",
+          "sm:grid-cols-3 sm:gap-10",
           "w-full",
         )}
       >
@@ -134,7 +139,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                   (!nextPageUrl || partial === "hideMore") && "hidden",
                 )}
                 hx-swap="outerHTML show:parent:top"
-                hx-get={partialNext}
+                hx-get={decodeURIComponent(partialNext)}
               >
                 <span class="inline [.htmx-request_&]:hidden">
                   Show More
@@ -285,7 +290,7 @@ function Result(props: SectionProps<typeof loader>) {
                 </Drawer>
               )}
 
-              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+              <div class="grid grid-cols-1 sm:grid-cols-[250px_1fr]">
                 {device === "desktop" && (
                   <aside class="place-self-start flex flex-col gap-9">
                     <span class="text-base font-semibold h-12 flex items-center">

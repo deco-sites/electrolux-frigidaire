@@ -44,7 +44,7 @@ function Banner({ mobile, desktop, alt, href }: Banner) {
         />
         <img
           width={640}
-          class="w-full h-full object-cover"
+          class="w-full h-full object-contain"
           src={mobile}
           alt={alt}
           decoding="async"

@@ -11,10 +11,6 @@ export interface Props {
   page: ProductDetailsPage | null;
 }
 
-const WIDTH = 820;
-const HEIGHT = 615;
-const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
-
 /**
  * @title Product Image Slider
  * @description Creates a three columned grid on destkop, one for the dots preview, one for the image slider and the other for product info
@@ -45,13 +41,11 @@ export default function GallerySlider(props: Props) {
                 class="carousel-item w-full"
               >
                 <Image
-                  class="w-full"
+                  class="w-full h-[600px]"
                   sizes="(max-width: 640px) 100vw, 40vw"
-                  style={{ aspectRatio: ASPECT_RATIO }}
+                  style={{ objectFit: "contain" }}
                   src={img.url!}
                   alt={img.alternateName}
-                  width={WIDTH}
-                  height={HEIGHT}
                   // Preload LCP image for better web vitals
                   preload={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
@@ -94,13 +88,15 @@ export default function GallerySlider(props: Props) {
           {images.map((img, index) => (
             <li class="carousel-item">
               <Slider.Dot index={index}>
-                <Image
-                  style={{ aspectRatio: "1 / 1" }}
-                  class="group-disabled:border-base-300 border rounded object-cover"
-                  width={60}
-                  height={60}
+                <img
+                  data-fresh-disable-lock={true}
                   src={img.url!}
                   alt={img.alternateName}
+                  width={60}
+                  height={60}
+                  class="group-disabled:border-base-300 border rounded object-contain"
+                  style={{ aspectRatio: "1 / 1" }}
+                  decoding="async"
                 />
               </Slider.Dot>
             </li>
@@ -113,7 +109,7 @@ export default function GallerySlider(props: Props) {
         id={zoomId}
         images={images}
         width={700}
-        height={Math.trunc(700 * HEIGHT / WIDTH)}
+        height={700}
       />
     </>
   );

@@ -1,5 +1,5 @@
 import { AnalyticsItem, Product } from "apps/commerce/types.ts";
-import { useScript } from "apps/utils/useScript.ts";
+import { useScript } from "deco/hooks/useScript.ts";
 import { JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
@@ -108,14 +108,6 @@ const useAddToCart = ({ product, seller }: Props) => {
       attributes: Object.fromEntries(
         additionalProperty.map(({ name, value }) => [name, value]),
       ),
-    };
-  }
-
-  if (platform === "linx") {
-    return {
-      ProductID: productGroupID,
-      SkuID: productID,
-      Quantity: 1,
     };
   }
 

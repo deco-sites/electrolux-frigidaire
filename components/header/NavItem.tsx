@@ -8,7 +8,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
   return (
     <li
-      class="group flex items-center pr-5"
+      class="group flex items-center pr-5 relative"
       style={{ height: NAVBAR_HEIGHT_DESKTOP }}
     >
       <a
@@ -21,7 +21,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
       {children && children.length > 0 &&
         (
           <div
-            class="fixed hidden hover:flex group-hover:flex bg-base-100 z-40 items-start justify-center gap-6 border-t-2 border-b-2 border-base-200 absolute"
+            class="whitespace-nowrap w-max fixed hidden hover:flex group-hover:flex bg-base-100 z-40 items-start justify-center gap-6 border-t-2 border-b-2 border-base-200 absolute"
             style={{
               top: "0px",
               right: "0px",

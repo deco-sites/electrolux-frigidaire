@@ -95,7 +95,7 @@ const Desktop = (
 
     <div class="flex flex-col gap-4 container relative">
       <div class="flex justify-between items-center text-base-300">
-        <div class="flex flex-1">
+        <div class="flex flex-2">
           <a href="/" aria-label="Store logo">
             <Image
               src={logo.src}
@@ -106,8 +106,8 @@ const Desktop = (
           </a>
         </div>
 
-        <ul class="flex flex-1 justify-end relative w-full">
-          {navItems?.slice(0, 4).map((item) => <NavItem item={item} />)}
+        <ul class="flex flex-2 justify-end relative w-full">
+          {navItems?.map((item) => <NavItem item={item} />)}
         </ul>
       </div>
     </div>

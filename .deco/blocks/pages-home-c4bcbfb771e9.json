@@ -12,18 +12,14 @@
       "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
       "cta": "/mono",
       "products": {
-        "__resolveType": "shopify/loaders/ProductList.ts",
-        "props": {
-          "sort": "",
-          "query": "accessories",
-          "count": 12
-        },
-        "filters": {
-          "tags": [],
-          "productTypes": [],
-          "productVendors": [],
-          "variantOptions": []
-        }
+        "__resolveType": "sap/loaders/product/ProductList.ts",
+        "productCodes": [
+          "GRMC2273CF",
+          "GRQC2255BF",
+          "FRSS2623AS",
+          "GRSC2352AF",
+          "FFHT1425VV"
+        ]
       }
     },
     {

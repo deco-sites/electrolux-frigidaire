@@ -1,14 +1,11 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Image from "apps/website/components/Image.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
-import AddToCartButton from "./AddToCartButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
 
@@ -39,17 +36,16 @@ function ProductCard({
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf } = product;
+  const { image: images, offers, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
-  const [front, back] = images ?? [];
+  const [plpImage] = images ?? [];
 
-  const { listPrice, price, seller = "1", availability } = useOffer(offers);
+  const { listPrice, price, availability } = useOffer(offers);
   const inStock = availability === "https://schema.org/InStock";
-  const possibilities = useVariantPossibilities(hasVariant, product);
-  const firstSkuVariations = Object.entries(possibilities)[0];
-  const variants = Object.entries(firstSkuVariations[1] ?? {});
-  const relativeUrl = relative(url);
+  const variants = hasVariant;
+
+  const relativeUrl = relative(variants[0].url);
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
     : 0;
@@ -94,52 +90,26 @@ function ProductCard({
             !inStock && "opacity-70",
           )}
         >
-          <Image
-            src={front.url!}
-            alt={front.alternateName}
+          <img
+            data-fresh-disable-lock={true}
+            src={plpImage.url!}
+            alt={plpImage.alternateName}
             width={WIDTH}
             height={HEIGHT}
             style={{ aspectRatio: ASPECT_RATIO }}
             class={clx(
-              "object-cover",
+              "object-contain",
               "rounded w-full",
               "col-span-full row-span-full",
             )}
             sizes="(max-width: 640px) 50vw, 20vw"
-            preload={preload}
             loading={preload ? "eager" : "lazy"}
-            decoding="async"
-          />
-          <Image
-            src={back?.url ?? front.url!}
-            alt={back?.alternateName ?? front.alternateName}
-            width={WIDTH}
-            height={HEIGHT}
-            style={{ aspectRatio: ASPECT_RATIO }}
-            class={clx(
-              "object-cover",
-              "rounded w-full",
-              "col-span-full row-span-full",
-              "transition-opacity opacity-0 lg:group-hover:opacity-100",
-            )}
-            sizes="(max-width: 640px) 50vw, 20vw"
-            loading="lazy"
             decoding="async"
           />
         </a>
 
         {/* Wishlist button */}
         <div class="absolute top-0 left-0 w-full flex items-center justify-between">
-          {/* Notify Me */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-error bg-opacity-15 text-center rounded-badge px-2 py-1",
-              inStock && "opacity-0",
-            )}
-          >
-            Notify me
-          </span>
-
           {/* Discounts */}
           <span
             class={clx(
@@ -165,38 +135,39 @@ function ProductCard({
       {/* SKU Selector */}
       {variants.length > 1 && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1">
-          {variants.map(([value, link]) => [value, relative(link)] as const)
-            .map(([value, link]) => (
-              <li>
-                <a href={link} class="cursor-pointer">
-                  <input
-                    class="hidden peer"
-                    type="radio"
-                    name={`${id}-${firstSkuVariations[0]}`}
-                    checked={link === relativeUrl}
-                  />
-                  <Ring value={value} checked={link === relativeUrl} />
-                </a>
-              </li>
-            ))}
+          {variants.map((variant) => (
+            <li>
+              <a href={variant.url} class="cursor-pointer">
+                <input
+                  class="hidden peer"
+                  type="radio"
+                  name={`${id}-${variant.additionalProperty?.[0].value}`}
+                  checked={variant.url === relativeUrl}
+                />
+                <Ring
+                  colorUrl={variant.additionalProperty?.[0].value}
+                  checked={variant.url === relativeUrl}
+                />
+              </a>
+            </li>
+          ))}
         </ul>
       )}
 
       <div class="flex-grow" />
 
-      <div class="flex gap-2 pt-2">
-        <span class="text-2xl font-medium text-secondary">
-          {formatPrice(price, offers?.priceCurrency)}
-        </span>
-        {listPrice && (
-          <span class="line-through font-normal text-xl text-gray-400">
-            {formatPrice(listPrice, offers?.priceCurrency)}
+      {price && (
+        <div class="flex gap-2 pt-2">
+          <span class="text-2xl font-medium text-secondary">
+            {formatPrice(price, offers?.priceCurrency)}
           </span>
-        )}
-        <span class="line-through font-normal text-xl text-gray-400">
-          R$200,00
-        </span>
-      </div>
+          {listPrice && (
+            <span class="line-through font-normal text-xl text-gray-400">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@
  * https://github.com/saadeghi/daisyui/blob/37bca23444bc9e4d304362c14b7088f9a08f1c74/src/docs/src/routes/theme-generator.svelte
  */
 import SiteTheme, { Font } from "apps/website/components/Theme.tsx";
-import Color from "npm:colorjs.io";
+import Color from "npm:colorjs.io@0.5.2";
 import type { ComponentChildren } from "preact";
 import { clx } from "../../sdk/clx.ts";
 
@@ -40,6 +40,8 @@ export interface ComplementaryColors {
   "base-200"?: string;
   /** @format color-input */
   "base-300"?: string;
+  /** @format color-input */
+  "base-400"?: string;
   /** @format color-input */
   "base-content"?: string;
   /** @format color-input */
@@ -269,43 +271,11 @@ function Section({
     .map(([name, value]) => ({ name, value }));
 
   return (
-    <>
-      <SiteTheme
-        variables={variables}
-        colorScheme={colorScheme === "any" ? undefined : colorScheme}
-      />
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          @font-face {
-          font-family: "Gotham";
-          font-style: normal;
-          font-weight: normal;
-          font-display: swap;
-          src: url(/fonts/gotham-book.woff)
-              format("woff"),
-            url(/fonts/gotham-book.woff)
-              format("woff2");
-          }
-          @font-face {
-            font-family: "Gotham";
-            font-style: normal;
-            font-weight: bold;
-            font-display: swap;
-            src: url(/fonts/gotham-bold.woff)
-                format("woff"),
-              url(/fonts/gotham-bold.woff)
-                format("woff2");
-          }
-                
-          html, :root {
-            color: #212738;
-            font-family: "Gotham", sans-serif;
-          }`,
-        }}
-      >
-      </style>
-    </>
+    <SiteTheme
+      fonts={font ? [font] : undefined}
+      variables={variables}
+      colorScheme={colorScheme === "any" ? undefined : colorScheme}
+    />
   );
 }
 
@@ -684,6 +654,10 @@ const snippets = {
   <button class="btn btn-md btn-accent">Normal</button>
   <button class="btn btn-sm btn-accent">Small</button>
   <button class="btn btn-xs btn-accent">Tiny</button>`,
+};
+
+export const LoadingFallback = () => {
+  throw new Error("Cannot defer theme section");
 };
 
 export default Section;

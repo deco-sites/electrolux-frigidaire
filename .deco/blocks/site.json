@@ -63,5 +63,7 @@
   },
   "flavor": {
     "framework": "htmx"
-  }
+  },
+  "apiUrl": "https://apolloapi.electrolux.com/occ/v2",
+  "baseSiteId": "frigidaire"
 }

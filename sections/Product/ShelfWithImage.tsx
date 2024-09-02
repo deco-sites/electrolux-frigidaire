@@ -21,7 +21,7 @@ export default function ShelfWithImage({ section, image }: Props) {
         <a href={image.href}>
           <Image
             src={image.src}
-            class="w-full h-full object-cover"
+            class="w-full h-full object-contain"
             width={720}
             height={640}
             alt={image.alt}

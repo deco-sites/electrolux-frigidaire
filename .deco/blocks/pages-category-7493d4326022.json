@@ -1,23 +1,24 @@
 {
   "name": "Search Page",
-  "path": "/search/:term",
+  "path": "/search",
   "default": {
     "possiblePaths": []
   },
   "sections": [
-    {
-      "jsonLD": {
-        "__resolveType": "PLP Loader"
-      },
-      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx"
-    },
     {
       "__resolveType": "Header"
     },
     {
       "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
-        "__resolveType": "PLP Loader"
+        "__resolveType": "sap/loaders/product/productListingPage.ts",
+        "currentPage": 0,
+        "fields": "FULL",
+        "pageSize": 12,
+        "term": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
       },
       "layout": {
         "columns": {

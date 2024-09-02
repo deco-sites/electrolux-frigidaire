@@ -1,17 +1,12 @@
 import commerce from "apps/commerce/mod.ts";
-import { color as linx } from "apps/linx/mod.ts";
-import { color as nuvemshop } from "apps/nuvemshop/mod.ts";
-import { color as shopify } from "apps/shopify/mod.ts";
-import { color as vnda } from "apps/vnda/mod.ts";
-import { color as vtex } from "apps/vtex/mod.ts";
-import { color as wake } from "apps/wake/mod.ts";
+import sap, { Props as SapProps } from "apps/sap/mod.ts";
 import { Props as WebsiteProps } from "apps/website/mod.ts";
 import { Section } from "deco/blocks/section.ts";
 import type { App as A, AppContext as AC } from "deco/mod.ts";
 import { rgb24 } from "std/fmt/colors.ts";
 import manifest, { Manifest } from "../manifest.gen.ts";
 
-export interface Props extends WebsiteProps {
+export interface Props extends WebsiteProps, SapProps {
   /**
    * @title Active Commerce Platform
    * @description Choose the active ecommerce platform
@@ -26,7 +21,6 @@ export type Platform =
   | "vnda"
   | "shopify"
   | "wake"
-  | "linx"
   | "nuvemshop"
   | "custom";
 
@@ -36,28 +30,10 @@ export type App = ReturnType<typeof Site>;
 // @ts-ignore somehow deno task check breaks, I have no idea why
 export type AppContext = AC<App>;
 
-const color = (platform: string) => {
-  switch (platform) {
-    case "vtex":
-      return vtex;
-    case "vnda":
-      return vnda;
-    case "wake":
-      return wake;
-    case "shopify":
-      return shopify;
-    case "linx":
-      return linx;
-    case "nuvemshop":
-      return nuvemshop;
-    case "deco":
-      return 0x02f77d;
-    default:
-      return 0x212121;
-  }
-};
-
 let firstRun = true;
+
+type WebsiteApp = ReturnType<typeof commerce>;
+type SapApp = ReturnType<typeof sap>;
 
 /**
  * @title Site
@@ -66,17 +42,15 @@ let firstRun = true;
  * @logo https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1/0ac02239-61e6-4289-8a36-e78c0975bcc8
  */
 export default function Site(
-  { theme, ...state }: Props,
-): A<Manifest, Props, [ReturnType<typeof commerce>]> {
+  { ...state }: Props,
+): A<Manifest, Props, [WebsiteApp, SapApp]> {
   _platform = state.platform || "custom";
 
   // Prevent console.logging twice
   if (firstRun) {
     firstRun = false;
     console.info(
-      ` 🐁 ${rgb24("Storefront", color("deco"))} | ${
-        rgb24(_platform, color(_platform))
-      } \n`,
+      ` ${rgb24("Storefront", 0x212121)} | ${rgb24(_platform, 0x212121)} \n`,
     );
   }
 
@@ -84,10 +58,8 @@ export default function Site(
     state,
     manifest,
     dependencies: [
-      commerce({
-        ...state,
-        global: theme ? [...(state.global ?? []), theme] : state.global,
-      }),
+      commerce(state),
+      sap(state),
     ],
   };
 }

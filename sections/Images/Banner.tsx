@@ -16,7 +16,7 @@ export interface Props {
     href: string;
     label: string;
   };
-  imageLast?: boolean
+  imageLast?: boolean;
 }
 
 function Banner({ title, description, images, cta, imageLast }: Props) {
@@ -41,7 +41,11 @@ function Banner({ title, description, images, cta, imageLast }: Props) {
             width={1320}
             height={480}
           />
-          <img src={images.desktop} alt={title} class="max-h-80 sm:max-h-none sm:h-auto sm:w-full object-cover" />
+          <img
+            src={images.desktop}
+            alt={title}
+            class="max-h-80 sm:max-h-none sm:h-auto sm:w-full object-contain"
+          />
         </Picture>
 
         <div

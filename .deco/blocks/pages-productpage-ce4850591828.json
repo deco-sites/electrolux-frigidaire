@@ -6,39 +6,25 @@
   },
   "sections": [
     {
-      "jsonLD": {
-        "__resolveType": "PDP Loader"
-      },
-      "jsonLDs": [
-        {}
-      ],
-      "__resolveType": "commerce/sections/Seo/SeoPDP.tsx"
-    },
-    {
       "__resolveType": "Header"
     },
     {
+      "__resolveType": "site/sections/Product/ProductDetails.tsx",
       "page": {
-        "__resolveType": "PDP Loader"
-      },
-      "__resolveType": "site/sections/Product/ProductDetails.tsx"
+        "__resolveType": "sap/loaders/product/productDetailsPage.ts",
+        "fields": "FULL",
+        "productCode": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "code"
+        }
+      }
     },
     {
-      "title": "You may also like",
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "title": "You may also like",
       "products": {
-        "__resolveType": "shopify/loaders/ProductList.ts",
-        "props": {
-          "sort": "",
-          "query": "a",
-          "count": 9
-        },
-        "filters": {
-          "tags": [],
-          "productTypes": [],
-          "productVendors": [],
-          "variantOptions": []
-        }
+        "__resolveType": "sap/loaders/product/ProductList.ts",
+        "productCodes": []
       }
     },
     {
