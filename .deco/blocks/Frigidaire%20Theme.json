@@ -14,15 +14,7 @@
     "--tab-border": "1px",
     "--tab-radius": "0.5rem"
   },
-  "font": {
-    "__resolveType": "website/loaders/fonts/googleFonts.ts",
-    "fonts": [
-      {
-        "variations": [],
-        "family": "Inter"
-      }
-    ]
-  },
+  "font": {},
   "mode": "dark",
   "mainColors": {
     "primary": "#EA1947",

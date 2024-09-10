@@ -42,7 +42,6 @@ export default function GallerySlider(props: Props) {
               >
                 <Image
                   class="w-full h-[600px]"
-                  sizes="(max-width: 640px) 100vw, 40vw"
                   style={{ objectFit: "contain" }}
                   src={img.url!}
                   alt={img.alternateName}
@@ -88,15 +87,13 @@ export default function GallerySlider(props: Props) {
           {images.map((img, index) => (
             <li class="carousel-item">
               <Slider.Dot index={index}>
-                <img
-                  data-fresh-disable-lock={true}
+                <Image
+                  style={{ aspectRatio: "1 / 1" }}
+                  class="group-disabled:border-base-400 border rounded object-cover w-full h-full"
+                  width={64}
+                  height={64}
                   src={img.url!}
                   alt={img.alternateName}
-                  width={60}
-                  height={60}
-                  class="group-disabled:border-base-300 border rounded object-contain"
-                  style={{ aspectRatio: "1 / 1" }}
-                  decoding="async"
                 />
               </Slider.Dot>
             </li>

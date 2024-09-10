@@ -8,28 +8,13 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
-      "cta": "/mono",
-      "products": {
-        "__resolveType": "sap/loaders/product/ProductList.ts",
-        "productCodes": [
-          "GRMC2273CF",
-          "GRQC2255BF",
-          "FRSS2623AS",
-          "GRSC2352AF",
-          "FFHT1425VV"
-        ]
-      }
-    },
-    {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
       "title": "Discover Frigidaire Appliances",
       "items": [
         {
           "label": "Refrigerators",
           "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/9eb7fccc-b42b-4f7e-bc6e-1557422a2340/GRMS2773AF_370x400.jpg",
-          "href": "https://www.frigidaire.com/kitchen-appliances/refrigerators"
+          "href": "/kitchen-appliances/refrigerators"
         },
         {
           "href": "/kitchen-appliances/ranges",
@@ -72,6 +57,21 @@
           "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/2686f983-6048-425e-ad2b-ada0f8995744/RAC_Dehumidifier_thumbnail.jpg"
         }
       ]
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
+      "cta": "/mono",
+      "products": {
+        "__resolveType": "sap/loaders/product/ProductList.ts",
+        "productCodes": [
+          "GRMC2273CF",
+          "GRQC2255BF",
+          "FRSS2623AS",
+          "GRSC2352AF",
+          "FFHT1425VV"
+        ]
+      }
     },
     {
       "__resolveType": "site/sections/Images/Banner.tsx",

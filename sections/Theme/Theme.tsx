@@ -271,11 +271,20 @@ function Section({
     .map(([name, value]) => ({ name, value }));
 
   return (
-    <SiteTheme
-      fonts={font ? [font] : undefined}
-      variables={variables}
-      colorScheme={colorScheme === "any" ? undefined : colorScheme}
-    />
+    <>
+      <SiteTheme
+        fonts={font ? [font] : undefined}
+        variables={variables}
+        colorScheme={colorScheme === "any" ? undefined : colorScheme}
+      />
+      <style
+        dangerouslySetInnerHTML={{
+          __html:
+            "@font-face{font-family:Gotham;font-style:normal;font-weight:400;font-display:swap;src:url(/live/invoke/website/loaders/asset.ts?src=https://electrolux-frigidaire.deco.site/fonts/gotham-book.woff) format('truetype'),url(/live/invoke/website/loaders/asset.ts?src=https://electrolux-frigidaire.deco.site/fonts/gotham-book.woff2) format('truetype')}@font-face{font-family:Gotham;font-style:normal;font-weight:bold;font-display:swap;src:url(/live/invoke/website/loaders/asset.ts?src=https://electrolux-frigidaire.deco.site/fonts/gotham-bold.woff) format('truetype'),url(/live/invoke/website/loaders/asset.ts?src=https://electrolux-frigidaire.deco.site/fonts/gotham-bold.woff2) format('truetype')}*,body,html{font-family:Gotham, sans-serif}",
+        }}
+      >
+      </style>
+    </>
   );
 }
 

@@ -21,7 +21,15 @@ function ValueItem(
 ) {
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
-      <div aria-checked={selected} class="checkbox" />
+      <div
+        aria-checked={selected}
+        class="checkbox rounded-none"
+        style={{
+          backgroundImage: selected
+            ? "linear-gradient(-45deg, transparent 65%, var(--chkfg) 65.99%),linear-gradient(45deg, transparent 75%, var(--chkfg) 75.99%),linear-gradient(-45deg, var(--chkfg) 40%, transparent 40.99%),linear-gradient(45deg,var(--chkfg) 30%,oklch(0.43 0.15 12) 30.99%,oklch(0.43 0.15 12) 40%,transparent 40.99%),linear-gradient(-45deg, oklch(0.43 0.15 12) 50%, var(--chkfg) 50.99%)"
+            : "",
+        }}
+      />
       <span class="text-sm">{label}</span>
       {quantity > 0 && <span class="text-sm text-base-300">({quantity})</span>}
     </a>

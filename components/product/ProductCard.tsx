@@ -5,7 +5,6 @@ import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-import WishlistButton from "../wishlist/WishlistButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
 
@@ -36,7 +35,8 @@ function ProductCard({
 }: Props) {
   const id = useId();
 
-  const { image: images, offers, isVariantOf } = product;
+  const { image: images, offers, isVariantOf, additionalProperty: baseProps } =
+    product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
   const [plpImage] = images ?? [];
@@ -46,6 +46,33 @@ function ProductCard({
   const variants = hasVariant;
 
   const relativeUrl = relative(variants[0].url);
+
+  const dimensions: string[] = [];
+  const bullets: string[] = [];
+  const badges: [string | undefined, string | undefined][] = [];
+
+  variants[0].additionalProperty?.forEach((prop) => {
+    if (
+      prop.propertyID && prop.value
+    ) {
+      if (["depth", "height", "width"].includes(prop.propertyID)) {
+        dimensions.push(prop.value);
+      }
+
+      if (prop.propertyID === "badge") {
+        badges.push([prop.value, prop.valueReference]);
+      }
+    }
+  });
+
+  if (baseProps) {
+    baseProps.forEach((prop) => {
+      if (prop.value && prop.propertyID === "bullet") {
+        bullets.push(prop.value);
+      }
+    });
+  }
+
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
     : 0;
@@ -120,49 +147,84 @@ function ProductCard({
             {percent} % off
           </span>
         </div>
-
-        <div class="absolute bottom-0 right-0">
-          <WishlistButton item={item} variant="icon" />
-        </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-5">
-        <span class="font-medium text-xl">
+      {/* SKU Selector */}
+      <ul class="flex flex-grow min-h-4 items-center justify-start gap-2 mb-2 ml-1 my-6">
+        {variants.length > 1 && variants.map((variant) => (
+          <li>
+            <a href={variant.url} class="cursor-pointer">
+              <input
+                class="hidden peer"
+                type="radio"
+                name={`${id}-${variant.additionalProperty?.[0].value}`}
+                checked={variant.url === relativeUrl}
+              />
+              <Ring
+                colorUrl={variant.additionalProperty?.[0].value}
+                checked={variant.url === relativeUrl}
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <a href={relativeUrl}>
+        <span class="font-bold text-base">
           {title}
         </span>
       </a>
 
-      {/* SKU Selector */}
-      {variants.length > 1 && (
-        <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1">
-          {variants.map((variant) => (
-            <li>
-              <a href={variant.url} class="cursor-pointer">
-                <input
-                  class="hidden peer"
-                  type="radio"
-                  name={`${id}-${variant.additionalProperty?.[0].value}`}
-                  checked={variant.url === relativeUrl}
-                />
-                <Ring
-                  colorUrl={variant.additionalProperty?.[0].value}
-                  checked={variant.url === relativeUrl}
-                />
-              </a>
+      {dimensions.length > 0 && (
+        <div class="mt-2">
+          <ul class="flex font-xs">
+            <li class="mr-2">
+              H: <span class="font-bold">{dimensions[1]}</span>
             </li>
-          ))}
-        </ul>
+            <li class="mr-2">
+              W: <span class="font-bold">{dimensions[2]}</span>
+            </li>
+            <li>
+              D: <span class="font-bold">{dimensions[0]}</span>
+            </li>
+          </ul>
+        </div>
+      )}
+
+      {badges.length > 0 && (
+        <div class="my-4">
+          <ul class="flex flex-col font-xs">
+            {badges.map(([text, icon]) => (
+              <li class="flex my-1">
+                <img class="mr-4 w-5 h-5" src={icon} />
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {bullets.length > 0 && (
+        <div class="my-4">
+          <ul class="flex flex-col font-xs">
+            {bullets.map((text) => (
+              <li class="flex my-1">
+                <span>{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
       <div class="flex-grow" />
 
       {price && (
         <div class="flex gap-2 pt-2">
-          <span class="text-2xl font-medium text-secondary">
+          <span class="text-xl font-medium text-secondary">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
           {listPrice && (
-            <span class="line-through font-normal text-xl text-gray-400">
+            <span class="line-through font-normal text-base text-gray-400">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}

@@ -20,10 +20,10 @@ const colors: Record<string, string | undefined> = {
 const useStyles = (value: string, checked: boolean) => {
   if (value) {
     return clx(
-      "h-8 w-8 block",
+      "h-4 w-4 block",
       "border border-base-300 rounded-full",
-      "ring-2 ring-offset-2",
-      checked ? "ring-primary" : "ring-transparent",
+      "ring-2 ring-offset-0",
+      checked ? "ring-base-content" : "ring-transparent",
     );
   }
 
