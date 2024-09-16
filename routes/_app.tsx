@@ -30,6 +30,26 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            @font-face {
+              font-family: Gotham;
+              src: url(${asset("/fonts/gotham-book.woff")}) format('woff');
+              font-weight: 300;
+              font-style: normal;
+              font-display: swap;
+            }
+            @font-face {
+              font-family: Gotham;
+              src: url(${asset("/fonts/gotham-bold.woff")}) format('woff');
+              font-weight: 700;
+              font-style: normal;
+              font-display: swap;
+            }`,
+          }}
+        >
+        </style>
       </Head>
 
       {/* Rest of Preact tree */}

@@ -23,8 +23,10 @@ function Card({ image, href, label }: Item) {
     <a href={href} class="flex flex-col items-center justify-center gap-6">
       <div class="w-32 h-32 sm:w-72 sm:h-72 flex justify-center items-center">
         <Image
+          class="h-auto max-h-full"
           src={image}
           alt={label}
+          fit="contain"
           width={300}
           height={300}
           loading="lazy"
@@ -35,12 +37,12 @@ function Card({ image, href, label }: Item) {
   );
 }
 
-function CategoryGrid({ title, cta, items }: Props) {
+function CategoryGrid({ title, items }: Props) {
   const device = useDevice();
 
   return (
     <Section.Container>
-      <Section.Header title={title} cta={cta} />
+      <Section.Header title={title} />
 
       {device === "desktop"
         ? (

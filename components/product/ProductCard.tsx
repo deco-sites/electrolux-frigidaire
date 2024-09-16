@@ -150,7 +150,7 @@ function ProductCard({
       </figure>
 
       {/* SKU Selector */}
-      <ul class="flex flex-grow min-h-4 items-center justify-start gap-2 mb-2 ml-1 my-6">
+      <ul class="flex flex-grow max-h-4 items-center justify-start gap-2 mb-2 ml-1 my-6">
         {variants.length > 1 && variants.map((variant) => (
           <li>
             <a href={variant.url} class="cursor-pointer">
@@ -209,7 +209,7 @@ function ProductCard({
           <ul class="flex flex-col font-xs">
             {bullets.map((text) => (
               <li class="flex my-1">
-                <span>{text}</span>
+                <span>- {text}</span>
               </li>
             ))}
           </ul>

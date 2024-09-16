@@ -54,14 +54,14 @@
         {
           "href": "/home-comfort/dehumidifiers",
           "label": "Dehumidifiers",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/2686f983-6048-425e-ad2b-ada0f8995744/RAC_Dehumidifier_thumbnail.jpg"
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/cc33bbe5-b64a-4cfe-9e67-bcdb91cbffd4/RAC_Dehumidifier_thumbnail.png"
         }
       ]
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
-      "cta": "/mono",
+      "cta": "/",
       "products": {
         "__resolveType": "sap/loaders/product/ProductList.ts",
         "productCodes": [
@@ -70,7 +70,8 @@
           "FRSS2623AS",
           "GRSC2352AF",
           "FFHT1425VV"
-        ]
+        ],
+        "fields": "FULL"
       }
     },
     {
@@ -105,6 +106,71 @@
     },
     {
       "__resolveType": "Footer"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/CategoryShelf.tsx",
+        "categories": [
+          {
+            "images": {
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/b2923b10-c17c-45d7-85f8-461e1c803cbf/FrenchDoor_HP_ShopBy.jpg",
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/edacff27-8f6b-4ac0-ba13-e9e844548276/FrenchDoor_HP_ShopBy.jpg"
+            },
+            "url": "/kitchen-appliances/refrigerators",
+            "title": "Refrigerators"
+          },
+          {
+            "images": {
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/52a28da6-6b6f-4c97-ba28-3a27b2143afc/Ranges_HP_ShopBy.jpg",
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/1390bb48-8da9-45e3-9123-e4bb4b8929ea/Ranges_HP_ShopBy.jpg"
+            },
+            "title": "Ranges",
+            "url": "/kitchen-appliances/dishwashers"
+          },
+          {
+            "images": {
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/012772d1-663a-4728-9ca4-96f942d45b1c/WallOven_HP_ShopBy.jpg",
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/fb4ba922-6297-44a2-b4b1-160493369578/WallOven_HP_ShopBy.jpg"
+            },
+            "url": "/kitchen-appliances/wall-ovens",
+            "title": "Wall Ovens"
+          },
+          {
+            "images": {
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/da2bdae9-12ee-496b-b1aa-b33833d904be/Dishwashers_HP_ShopBy.jpg",
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/9f89629d-4ad2-43fc-bc5f-e3a502669bb6/Dishwashers_HP_ShopBy.jpg"
+            },
+            "title": "Dishwashers",
+            "url": "/kitchen-appliances/dishwashers"
+          },
+          {
+            "images": {
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/02955a1a-b08a-427f-8fbb-55d1833143a4/Cooktops_HP_ShopBy.jpg",
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/55d62669-2a3f-4b8c-9691-409c5d736a1f/Cooktops_HP_ShopBy.jpg"
+            },
+            "url": "/kitchen-appliances/cooktops",
+            "title": "Cooktops"
+          },
+          {
+            "images": {
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/b9e7dbbd-f647-48d3-bd96-f6bb3567b984/SingleDoor_HP_ShopBy.jpg",
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/5355569c-f88f-421f-a6cb-aa3128c83de0/SingleDoor_HP_ShopBy.jpg"
+            },
+            "title": "Single Door Collections",
+            "url": "/kitchen-appliances/single-door-refrigerator-freezer"
+          },
+          {
+            "images": {
+              "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/7a2a5c98-e4b4-48af-848e-fa04442f04e5/Microwaves_HP_ShopBy.jpg",
+              "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/86c9a2ce-dc9f-4ac7-b8b9-a74f3a7d2ccd/Microwaves_HP_ShopBy.jpg"
+            },
+            "url": "/kitchen-appliances/microwaves",
+            "title": "Microwaves"
+          }
+        ],
+        "title": "Our Kitchen Suite:"
+      }
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

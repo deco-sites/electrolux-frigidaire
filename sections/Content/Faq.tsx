@@ -57,7 +57,6 @@ function Contact({ title, description, link }: Contact) {
 
 export default function FAQ({
   title,
-  cta,
   questions = [
     {
       question: "Como faço para acompanhar o meu pedido?",
@@ -81,7 +80,7 @@ export default function FAQ({
 }: Props) {
   return (
     <Section.Container>
-      <Section.Header title={title} cta={cta} />
+      <Section.Header title={title} />
 
       <ul class="w-full">
         <li>

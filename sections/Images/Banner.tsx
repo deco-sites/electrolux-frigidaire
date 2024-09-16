@@ -12,16 +12,16 @@ export interface Props {
     desktop: ImageWidget;
   };
 
-  cta?: {
+  button?: {
     href: string;
     label: string;
   };
   imageLast?: boolean;
 }
 
-function Banner({ title, description, images, cta, imageLast }: Props) {
+function Banner({ title, description, images, button, imageLast }: Props) {
   return (
-    <Section.Container>
+    <div class="flex flex-col gap-4 sm:gap-6 w-full py-5 sm:py-10">
       <div class="flex flex-col sm:flex-row">
         <Picture
           class={clx(
@@ -63,18 +63,18 @@ function Banner({ title, description, images, cta, imageLast }: Props) {
           )}
           <span class="flex-grow" />
           <div>
-            {cta && (
+            {button && (
               <a
-                href={cta.href}
+                href={button.href}
                 class="btn btn-primary no-animation text-xl w-full sm:w-fit"
               >
-                {cta.label}
+                {button.label}
               </a>
             )}
           </div>
         </div>
       </div>
-    </Section.Container>
+    </div>
   );
 }
 

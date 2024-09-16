@@ -33,7 +33,7 @@ export default function GallerySlider(props: Props) {
     <>
       <div id={id} class="flex flex-col sm:flex-row-reverse gap-5">
         {/* Image Slider */}
-        <div class="relative h-min flex-grow">
+        <div class="relative h-min flex-1">
           <Slider class="carousel carousel-center gap-6 w-full">
             {images.map((img, index) => (
               <Slider.Item
@@ -45,6 +45,7 @@ export default function GallerySlider(props: Props) {
                   style={{ objectFit: "contain" }}
                   src={img.url!}
                   alt={img.alternateName}
+                  fit="contain"
                   // Preload LCP image for better web vitals
                   preload={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
@@ -87,9 +88,9 @@ export default function GallerySlider(props: Props) {
           {images.map((img, index) => (
             <li class="carousel-item">
               <Slider.Dot index={index}>
-                <Image
+                <img
                   style={{ aspectRatio: "1 / 1" }}
-                  class="group-disabled:border-base-400 border rounded object-cover w-full h-full"
+                  class="group-disabled:border-base-400 border rounded object-contain w-16 h-16"
                   width={64}
                   height={64}
                   src={img.url!}

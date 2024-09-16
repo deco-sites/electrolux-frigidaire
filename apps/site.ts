@@ -1,12 +1,11 @@
 import commerce from "apps/commerce/mod.ts";
-import sap, { Props as SapProps } from "apps/sap/mod.ts";
 import { Props as WebsiteProps } from "apps/website/mod.ts";
 import { Section } from "deco/blocks/section.ts";
 import type { App as A, AppContext as AC } from "deco/mod.ts";
 import { rgb24 } from "std/fmt/colors.ts";
 import manifest, { Manifest } from "../manifest.gen.ts";
 
-export interface Props extends WebsiteProps, SapProps {
+export interface Props extends WebsiteProps {
   /**
    * @title Active Commerce Platform
    * @description Choose the active ecommerce platform
@@ -33,7 +32,6 @@ export type AppContext = AC<App>;
 let firstRun = true;
 
 type WebsiteApp = ReturnType<typeof commerce>;
-type SapApp = ReturnType<typeof sap>;
 
 /**
  * @title Site
@@ -43,7 +41,7 @@ type SapApp = ReturnType<typeof sap>;
  */
 export default function Site(
   { ...state }: Props,
-): A<Manifest, Props, [WebsiteApp, SapApp]> {
+): A<Manifest, Props, [WebsiteApp]> {
   _platform = state.platform || "custom";
 
   // Prevent console.logging twice
@@ -59,7 +57,6 @@ export default function Site(
     manifest,
     dependencies: [
       commerce(state),
-      sap(state),
     ],
   };
 }
