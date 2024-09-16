@@ -1,17 +1,14 @@
-import { useScript } from "deco/hooks/useScript.ts";
 import { useId } from "../../sdk/useId.ts";
 import { HTMLWidget } from "apps/admin/widgets.ts";
 import { clx } from "../../sdk/clx.ts";
-
+import { useScript as useScript } from "@deco/deco/hooks";
 const script = (id: string) => {
   const handleScroll = () => {
     const KEY = "store-cookie-consent";
     const ACCEPTED = "accepted";
     const HIDDEN = "translate-y-[200%]";
-
     const consent = localStorage.getItem(KEY);
     const elem = document.getElementById(id);
-
     if (consent !== ACCEPTED && elem) {
       const accept = elem.querySelector("[data-button-cc-accept]");
       accept && accept.addEventListener("click", () => {
@@ -24,10 +21,8 @@ const script = (id: string) => {
       elem.classList.remove(HIDDEN);
     }
   };
-
   addEventListener("scroll", handleScroll, { once: true });
 };
-
 interface Props {
   title?: string;
   text?: HTMLWidget;
@@ -44,7 +39,6 @@ interface Props {
     content?: "Tiled" | "Piled up";
   };
 }
-
 function CookieConsent(
   {
     title = "Cookies",
@@ -61,7 +55,6 @@ function CookieConsent(
   }: Props,
 ) {
   const id = useId();
-
   return (
     <>
       <div
@@ -108,5 +101,4 @@ function CookieConsent(
     </>
   );
 }
-
 export default CookieConsent;

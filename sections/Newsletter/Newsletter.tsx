@@ -1,16 +1,14 @@
-import { SectionProps } from "deco/mod.ts";
 import { AppContext } from "../../apps/site.ts";
 import Icon from "../../components/ui/Icon.tsx";
 import Section from "../../components/ui/Section.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { useComponent } from "../Component.tsx";
-
+import { type SectionProps as SectionProps } from "@deco/deco";
 interface NoticeProps {
   title?: string;
   description?: string;
 }
-
 interface LinksProps {
   title?: string;
   links?: {
@@ -18,48 +16,35 @@ interface LinksProps {
     href: string;
   }[];
 }
-
 export interface Props {
   content?: LinksProps;
   empty?: NoticeProps;
   success?: NoticeProps;
   failed?: NoticeProps;
-
   /** @description Signup label */
   label?: string;
-
   /** @description Input placeholder */
   placeholder?: string;
-
   /** @hide true */
   status?: "success" | "failed";
 }
-
 export async function action(props: Props, req: Request, ctx: AppContext) {
   const platform = usePlatform();
-
   const form = await req.formData();
   const email = `${form.get("email") ?? ""}`;
-
   if (platform === "vtex") {
     // deno-lint-ignore no-explicit-any
     await (ctx as any).invoke("vtex/actions/newsletter/subscribe.ts", {
       email,
     });
-
     return { ...props, status: "success" };
   }
-
   return { ...props, status: "failed" };
 }
-
 export function loader(props: Props) {
   return { ...props, status: undefined };
 }
-
-function Notice(
-  { title, description }: NoticeProps,
-) {
+function Notice({ title, description }: NoticeProps) {
   return (
     <div class="flex flex-col justify-center items-center sm:items-start gap-6 mb-3">
       <span class="text-2xl font-bold">
@@ -71,10 +56,7 @@ function Notice(
     </div>
   );
 }
-
-function Links(
-  { title, links }: LinksProps,
-) {
+function Links({ title, links }: LinksProps) {
   return (
     <div class="flex flex-col justify-center items-center sm:items-start gap-6">
       <span class="text-2xl font-bold">
@@ -95,7 +77,6 @@ function Links(
     </div>
   );
 }
-
 function Newsletter({
   empty = {
     title: "Get top deals, latest trends, and more.",
@@ -131,9 +112,7 @@ function Newsletter({
         <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
           <Icon
             size={80}
-            class={clx(
-              status === "success" ? "text-success" : "text-error",
-            )}
+            class={clx(status === "success" ? "text-success" : "text-error")}
             id={status === "success" ? "check-circle" : "error"}
           />
           <Notice {...status === "success" ? success : failed} />
@@ -141,7 +120,6 @@ function Newsletter({
       </Section.Container>
     );
   }
-
   return (
     <Section.Container class="bg-base-200">
       <div class="p-5 sm:p-12 grid grid-flow-row sm:grid-cols-2 gap-10 sm:gap-20 place-items-center items-start">
@@ -179,5 +157,4 @@ function Newsletter({
     </Section.Container>
   );
 }
-
 export default Newsletter;

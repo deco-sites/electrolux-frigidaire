@@ -1,28 +1,19 @@
-import { useSection } from "deco/hooks/useSection.ts";
 import { JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-
+import { useSection as useSection } from "@deco/deco/hooks";
 export interface Props {
   /** @description Section title */
   title?: string;
-
   /** @description See all link */
   cta?: string;
 }
-
 function Header({ title, cta }: Props) {
   if (!title) {
     return null;
   }
-
   return (
-    <div
-      class={clx(
-        "flex justify-between items-center gap-2",
-        "px-5 sm:px-0",
-      )}
-    >
+    <div class={clx("flex justify-between items-center gap-2", "px-5 sm:px-0")}>
       <span class="text-2xl sm:text-3xl font-semibold">{title}</span>
       {cta && (
         <a class="text-sm font-medium text-primary" href={cta}>
@@ -32,21 +23,16 @@ function Header({ title, cta }: Props) {
     </div>
   );
 }
-
 interface Tab {
   title: string;
 }
-
-function Tabbed(
-  { tabs, current = 0, children }: {
-    tabs: Tab[];
-    /** @description Current tab index. Defaults to 0 */
-    current?: number;
-    children: JSX.Element;
-  },
-) {
+function Tabbed({ tabs, current = 0, children }: {
+  tabs: Tab[];
+  /** @description Current tab index. Defaults to 0 */
+  current?: number;
+  children: JSX.Element;
+}) {
   const id = useId();
-
   return (
     <>
       <div class="flex px-5 sm:px-0 gap-3">
@@ -81,7 +67,6 @@ function Tabbed(
     </>
   );
 }
-
 function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
   return (
     <div
@@ -93,11 +78,8 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     />
   );
 }
-
 function Section() {}
-
 Section.Container = Container;
 Section.Header = Header;
 Section.Tabbed = Tabbed;
-
 export default Section;

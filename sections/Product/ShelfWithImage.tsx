@@ -1,7 +1,6 @@
-import { Section } from "deco/blocks/section.ts";
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-
+import { type Section as Section } from "@deco/deco/blocks";
 export interface Props {
   section: Section;
   image: {
@@ -10,7 +9,6 @@ export interface Props {
     href?: string;
   };
 }
-
 export default function ShelfWithImage({ section, image }: Props) {
   return (
     <div class="container">

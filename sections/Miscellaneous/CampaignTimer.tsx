@@ -1,20 +1,17 @@
 import type { HTMLWidget } from "apps/admin/widgets.ts";
-import { useScript } from "deco/hooks/useScript.ts";
 import { useId } from "../../sdk/useId.ts";
-
+import { useScript as useScript } from "@deco/deco/hooks";
 export interface Props {
   /**
    * @title Text
    * @default Time left for a campaign to end with a link
    */
   text?: HTMLWidget;
-
   /**
    * @title Expires at date
    * @format datetime
    */
   expiresAt?: string;
-
   labels?: {
     days?: string;
     hours?: string;
@@ -22,20 +19,16 @@ export interface Props {
     seconds?: string;
   };
 }
-
 const snippet = (expiresAt: string, rootId: string) => {
   const expirationDate = new Date(expiresAt).getTime();
-
   const getDelta = () => {
     const delta = expirationDate - new Date().getTime();
-
     const days = Math.floor(delta / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
       (delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
     );
     const minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((delta % (1000 * 60)) / 1000);
-
     return {
       days,
       hours,
@@ -43,24 +36,20 @@ const snippet = (expiresAt: string, rootId: string) => {
       seconds,
     };
   };
-
   const setValue = (id: string, value: number) => {
     const elem = document.getElementById(id);
-
-    if (!elem) return;
-
+    if (!elem) {
+      return;
+    }
     elem.style.setProperty("--value", value.toString());
   };
-
   const start = () =>
     setInterval(() => {
       const { days, hours, minutes, seconds } = getDelta();
       const isExpired = days + hours + minutes + seconds < 0;
-
       if (isExpired) {
         const expired = document.getElementById(`${rootId}::expired`);
         const counter = document.getElementById(`${rootId}::counter`);
-
         expired && expired.classList.remove("hidden");
         counter && counter.classList.add("hidden");
       } else {
@@ -69,13 +58,11 @@ const snippet = (expiresAt: string, rootId: string) => {
         setValue(`${rootId}::minutes`, minutes);
         setValue(`${rootId}::seconds`, seconds);
       }
-    }, 1_000);
-
+    }, 1000);
   document.readyState === "complete"
     ? start()
     : addEventListener("load", start);
 };
-
 function CampaignTimer({
   expiresAt = `${new Date()}`,
   labels = {
@@ -92,7 +79,6 @@ function CampaignTimer({
     label: string | undefined;
     time: string;
   }
-
   const TimeComponent: preact.FunctionalComponent<TimeComponentProps> = (
     { id, label, time },
   ) => (
@@ -108,7 +94,6 @@ function CampaignTimer({
       </span>
     </div>
   );
-
   return (
     <>
       <div>
@@ -138,5 +123,4 @@ function CampaignTimer({
     </>
   );
 }
-
 export default CampaignTimer;

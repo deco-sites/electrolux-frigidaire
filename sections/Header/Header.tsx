@@ -1,8 +1,6 @@
 import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useDevice } from "deco/hooks/useDevice.ts";
-import { useSection } from "deco/hooks/useSection.ts";
 import Alert from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
 import Menu from "../../components/header/Menu.tsx";
@@ -23,41 +21,35 @@ import {
   SIDEMENU_CONTAINER_ID,
   SIDEMENU_DRAWER_ID,
 } from "../../constants.ts";
-
+import {
+  useDevice as useDevice,
+  useSection as useSection,
+} from "@deco/deco/hooks";
 export interface Logo {
   src: ImageWidget;
   alt: string;
   width?: number;
   height?: number;
 }
-
 export interface SectionProps {
   alerts?: HTMLWidget[];
-
   /**
    * @title Navigation items
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: SiteNavigationElement[] | null;
-
   /**
    * @title Searchbar
    * @description Searchbar configuration
    */
   searchbar: SearchbarProps;
-
   /** @title Logo */
   logo: Logo;
-
   /** @hide true */
   variant?: "initial" | "menu";
 }
-
 type Props = Omit<SectionProps, "alert" | "variant">;
-
-const Desktop = (
-  { navItems, logo, searchbar }: Props,
-) => (
+const Desktop = ({ navItems, logo, searchbar }: Props) => (
   <>
     <Modal id={SEARCHBAR_POPUP_ID}>
       <div
@@ -113,7 +105,6 @@ const Desktop = (
     </div>
   </>
 );
-
 const Mobile = ({ logo, searchbar }: Props) => (
   <>
     <Drawer
@@ -189,7 +180,6 @@ const Mobile = ({ logo, searchbar }: Props) => (
     </div>
   </>
 );
-
 function Header({
   alerts = [],
   logo = {
@@ -202,7 +192,6 @@ function Header({
   ...props
 }: Props) {
   const device = useDevice();
-
   return (
     <header
       style={{
@@ -227,11 +216,9 @@ function Header({
     </header>
   );
 }
-
 export default function Section({ variant, ...props }: SectionProps) {
   if (variant === "menu") {
     return <Menu navItems={props.navItems ?? []} />;
   }
-
   return <Header {...props} />;
 }
