@@ -8,6 +8,24 @@
       "__resolveType": "Header"
     },
     {
+      "__resolveType": "site/sections/Images/Banner.tsx",
+      "title": "Gathering Season is Almost Here!",
+      "cta": {
+        "label": "Apply Now",
+        "href": "#"
+      },
+      "images": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/257d0416-6820-44f1-a061-fe613ae83af1/Woman-Gas-Range-Lifestyle-Image-Desktop.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/a0b924ba-4933-44ba-adc2-6cc122fe3649/Woman-Gas-Range-Lifestyle-Image-Desktop.png"
+      },
+      "description": "Make cooking for a crowd a breeze with Total Convection ranges and wall ovens. ",
+      "button": {
+        "href": "#",
+        "label": "Shop now"
+      },
+      "imageLast": true
+    },
+    {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
       "title": "Discover Frigidaire Appliances",
       "items": [
@@ -59,9 +77,26 @@
       ]
     },
     {
+      "__resolveType": "site/sections/Images/Banner.tsx",
+      "title": "NEW! Shop Small Appliances! ",
+      "cta": {
+        "label": "Apply Now",
+        "href": "#"
+      },
+      "images": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/27d76ac6-b304-42c3-8bae-daebee8a856a/Full-SDA-Launch-PLP-Banner-Desktop.webp",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/02f31a17-53ee-45f7-935c-609b9e0dff95/Full-SDA-Launch-PLP-Banner-Desktop.webp"
+      },
+      "description": "Meet your kitchen’s new best friends: our sleek espresso makers and game-changing air fryers. Brew barista-quality coffee and cook your family's favorite foods with less oil. Quick, easy and delicious. ",
+      "button": {
+        "href": "#",
+        "label": "Shop now"
+      },
+      "imageLast": false
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Shop the Best Refrigerators of 2023 by Reviewed.com",
-      "cta": "/",
       "products": {
         "__resolveType": "sap/loaders/product/ProductList.ts",
         "productCodes": [
@@ -76,36 +111,57 @@
     },
     {
       "__resolveType": "site/sections/Images/Banner.tsx",
-      "title": "Get 40$ off",
+      "title": "End of Season Clearance on Air Conditioners! ",
       "cta": {
         "label": "Apply Now",
         "href": "#"
       },
-      "description": "<p><span style=\"color: rgb(92, 92, 92);\" data-mce-style=\"color: rgb(92, 92, 92);\">a future qualifying purchase over $40 when approved for a Debit or Credit</span> <span style=\"color: rgb(45, 194, 107);\" data-mce-style=\"color: rgb(45, 194, 107);\">RedCard™</span></p>",
       "images": {
-        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/235f846d-8182-45df-8e88-c72d1e08645d",
-        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/3c800e87-d78d-4179-b4b7-b8b309de3fbe"
-      }
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/12aca2a6-6409-446a-8a1b-4bff4fa01cac/RAC-Lifestyle-HP-Desktop.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/a4a9e21e-757b-4a4a-ad1d-97e19f03f13a/RAC-Lifestyle-HP-Desktop.png"
+      },
+      "description": "Shop this season's best selling window, built in and portable models at low prices, while supplies last! ",
+      "button": {
+        "href": "#",
+        "label": "Shop Clearance"
+      },
+      "imageLast": false
     },
     {
-      "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
-      "label": "Sign up",
-      "placeholder": "Email address",
-      "empty": {
-        "title": "Be the first to know",
-        "description": "Get the latest deals and product updates straight to your inbox."
+      "__resolveType": "site/sections/Images/Banner.tsx",
+      "title": "1 Oven, 15+ Ways to Cook",
+      "cta": {
+        "label": "Apply Now",
+        "href": "#"
       },
-      "success": {
-        "title": "Thank you for subscribing!",
-        "description": "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!"
+      "images": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/1c2aac76-86e0-4075-8dcf-2b2711979d1f/All-ranges-Cropped.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/31cfed08-c24b-4950-9530-b29a3571d94d/All-ranges-Cropped.png"
       },
-      "failed": {
-        "title": "Oops!. Something went wrong!",
-        "description": "Something went wrong. Please try again. If the problem persists, please contact us."
-      }
+      "description": "Explore ranges and wall ovens with features such as air fry, no preheat, slow cook and more. ",
+      "button": {
+        "href": "#",
+        "label": "Shop Total Convection"
+      },
+      "imageLast": true
     },
     {
-      "__resolveType": "Footer"
+      "__resolveType": "site/sections/Images/Banner.tsx",
+      "title": "Genuine Water Filters. Safety You Can Trust. ",
+      "cta": {
+        "label": "Apply Now",
+        "href": "#"
+      },
+      "images": {
+        "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/74904a82-7c62-480f-adb6-f70b085904d5/Filters_Difference_Taste.png",
+        "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/electrolux-frigidaire/e0d79382-b0fc-406a-a9c4-2f8caa240a84/Filters_Difference_Taste.png"
+      },
+      "description": "Keep safer, great tasting water flowing with our Genuine Water Filters.",
+      "button": {
+        "href": "#",
+        "label": "Shop Water Filters"
+      },
+      "imageLast": false
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
@@ -170,6 +226,32 @@
           }
         ],
         "title": "Our Kitchen Suite:"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Newsletter/Newsletter.tsx",
+      "label": "Sign up",
+      "placeholder": "Email address",
+      "empty": {
+        "title": "Be the first to know",
+        "description": "Get the latest deals and product updates straight to your inbox."
+      },
+      "success": {
+        "title": "Thank you for subscribing!",
+        "description": "You’re now signed up to receive the latest news, trends, and exclusive promotions directly to your inbox. Stay tuned!"
+      },
+      "failed": {
+        "title": "Oops!. Something went wrong!",
+        "description": "Something went wrong. Please try again. If the problem persists, please contact us."
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
       }
     }
   ],

@@ -1,10 +1,10 @@
-import { type HTMLWidget, type ImageWidget } from "apps/admin/widgets.ts";
+import { type ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { clx } from "../../sdk/clx.ts";
 
 export interface Props {
   title: string;
-  description?: HTMLWidget;
+  description?: string;
 
   images: {
     mobile: ImageWidget;
@@ -20,7 +20,7 @@ export interface Props {
 
 function Banner({ title, description, images, button, imageLast }: Props) {
   return (
-    <div class="flex flex-col gap-4 sm:gap-6 w-full py-5 sm:py-10">
+    <div class="flex flex-col gap-4 sm:gap-6 w-full py-3">
       <div class="flex flex-col sm:flex-row">
         <Picture
           class={clx(
@@ -37,8 +37,8 @@ function Banner({ title, description, images, button, imageLast }: Props) {
           <Source
             media="(min-width: 640px)"
             src={images.desktop}
-            width={1320}
-            height={480}
+            width={660}
+            height={370}
           />
           <img
             src={images.desktop}

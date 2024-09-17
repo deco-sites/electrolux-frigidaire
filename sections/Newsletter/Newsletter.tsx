@@ -108,7 +108,7 @@ function Newsletter({
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
-      <Section.Container class="bg-base-200">
+      <Section.Container full class="bg-base-200">
         <div class="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
           <Icon
             size={80}
@@ -121,7 +121,7 @@ function Newsletter({
     );
   }
   return (
-    <Section.Container class="bg-base-200">
+    <Section.Container full class="bg-base-200">
       <div class="p-5 sm:p-12 grid grid-flow-row sm:grid-cols-2 gap-10 sm:gap-20 place-items-center items-start">
         <div>
           <Notice {...empty} />

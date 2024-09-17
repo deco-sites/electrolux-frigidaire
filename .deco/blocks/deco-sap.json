@@ -1,1 +1,5 @@
-{"__resolveType":"site/apps/deco/sap.ts"}
+{
+  "__resolveType": "site/apps/deco/sap.ts",
+  "apiUrl": "https://apolloapi.electrolux.com/occ/v2",
+  "baseSiteId": "frigidaire"
+}
