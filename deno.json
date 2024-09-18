@@ -32,7 +32,7 @@
     "simple-git": "npm:simple-git@^3.25.0",
     "std/": "https://deno.land/std@0.190.0/",
     "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.101.6/",
-    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@23a5f40264c45b488d77e6b8ed860cd369b7b094/",
+    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@e0b0b5a4666a0af526c0d5de36d7d8ac7486f06f/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "daisyui": "npm:daisyui@4.6.0",
