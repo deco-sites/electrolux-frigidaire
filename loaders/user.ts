@@ -4,7 +4,7 @@ function loader(
   _: unknown,
   _req: Request,
   _ctx: AppContext,
-): Promise<null> {
+): null {
   return null;
 }
 
