@@ -119,8 +119,8 @@ function ProductCard({
         >
           <img
             data-fresh-disable-lock={true}
-            src={plpImage.url!}
-            alt={plpImage.alternateName}
+            src={plpImage?.url!}
+            alt={plpImage?.alternateName}
             width={WIDTH}
             height={HEIGHT}
             style={{ aspectRatio: ASPECT_RATIO }}
